@@ -11,6 +11,16 @@ class Conexao {
   public function conectar(){
     try{
 
-    } catch()
+      $conexao = new PDO(
+        "mysql:host=$this->host;dbname=$this->database",
+        "$this->user",
+        "$this->pass"
+      );
+
+      return $conexao;
+      
+    } catch(PDOException $e){
+      echo '<p> Erro: ' . $e->getMessage() . '</p>';
+    }
   }
 }
