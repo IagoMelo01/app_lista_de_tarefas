@@ -9,4 +9,8 @@ class Tarefa {
   public function __get($attr){
     return $this->$attr;
   }
+
+  public function __set($attr, $val){
+    $this->$attr = $val;
+  }
 }

@@ -3,7 +3,7 @@
 class Conexao {
 
   private $host = 'localhost';
-  private $database = 'php_pdo';
+  private $database = 'task_manager';
   private $user = 'root';
   private $pass = '';
   
@@ -18,7 +18,7 @@ class Conexao {
       );
 
       return $conexao;
-      
+
     } catch(PDOException $e){
       echo '<p> Erro: ' . $e->getMessage() . '</p>';
     }
