@@ -18,7 +18,7 @@ require 'tarefa_controller.php';
 			function editar(id, tarefa_txt){
 				// criar um form de edição
 				let form = document.createElement('form');
-				form.action = "#"
+				form.action = "tarefa_controller.php?acao=atualizar"
 				form.method = 'post'
 				form.className = 'row'
 
@@ -28,12 +28,20 @@ require 'tarefa_controller.php';
 				inputTarefa.className = 'col-9 form-control'
 				inputTarefa.value = tarefa_txt
 
+				// input hidden para o id da tarefa
+				let inputId = document.createElement('input')
+				inputId.type = 'hidden'
+				inputId.name = 'id'
+				inputId.value = id
+
 				let button = document.createElement('button')
 				button.type = 'submit'
 				button.className = 'col-3 btn btn-info'
 				button.innerHTML = 'Atualizar'
 
+				// insere os itens no form
 				form.appendChild(inputTarefa)
+				form.appendChild(inputId)
 				form.appendChild(button)
 
 				// selecionar a div
