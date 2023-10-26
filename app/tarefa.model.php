@@ -14,3 +14,5 @@ class Tarefa {
     $this->$attr = $val;
   }
 }
+
+?>

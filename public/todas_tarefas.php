@@ -15,7 +15,7 @@ require 'tarefa_controller.php';
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 		<script>
-			function editar(id, tarefa){
+			function editar(id, tarefa_txt){
 				// criar um form de edição
 				let form = document.createElement('form');
 				form.action = "#"
@@ -26,7 +26,7 @@ require 'tarefa_controller.php';
 				inputTarefa.type = 'text'
 				inputTarefa.name = 'tarefa'
 				inputTarefa.className = 'col-9 form-control'
-				inputTarefa.value = tarefa
+				inputTarefa.value = tarefa_txt
 
 				let button = document.createElement('button')
 				button.type = 'submit'
@@ -81,7 +81,7 @@ require 'tarefa_controller.php';
 										<div class="col-sm-9" id="tarefa_<?= $tarefa->id ?>"><?= $tarefa->tarefa; ?> (<?= $tarefa->status ?>)</div>
 										<div class="col-sm-3 mt-2 d-flex justify-content-between">
 											<i class="fas fa-trash-alt fa-lg text-danger" onclick="excluir()"></i>
-											<i class="fas fa-edit fa-lg text-info" onclick="editar(<?= $tarefa->id ?>, '<?= $tarefa->tarefa; ?>')"></i>
+											<i class="fas fa-edit fa-lg text-info" onclick="editar(<?= $tarefa->id ?>, '<?= $tarefa->tarefa ?>')"></i>
 											<i class="fas fa-check-square fa-lg text-success" onclick="concluida()"></i>
 										</div>
 									</div>
@@ -96,5 +96,6 @@ require 'tarefa_controller.php';
 				</div>
 			</div>
 		</div>
+		
 	</body>
 </html>
